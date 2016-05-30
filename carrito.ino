@@ -6,12 +6,17 @@ int motorA = 12;
 int motorA1 = 11;
 int motorB = 10;
 int motorB1 = 9;
+int led1=5;
+int led2=6;
+
 
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 
 void setup()
 {
+  pinMode(led1,OUTPUT);
+  pinMode(led2,OUTPUT);
   pinMode(motorA, OUTPUT);
   pinMode(motorA1, OUTPUT);
   pinMode(motorB, OUTPUT);
@@ -26,6 +31,10 @@ void loop() {
   }
   if (results.value ==3255005345) //Tecla de arriba
   {
+    digitalWrite(led1, HIGH);
+    digitalWrite(led2,HIGH);
+    
+    
     digitalWrite(motorA1, HIGH);
     digitalWrite(motorB1,HIGH);
     
@@ -47,6 +56,9 @@ void loop() {
 
  if (results.value == 553866289) //Tecla de arriba
   {
+    digitalWrite(led1, HIGH);
+    digitalWrite(led2,LOW);
+    
     digitalWrite(motorA1,  HIGH);
     digitalWrite(motorB1,HIGH);
 
@@ -59,6 +71,9 @@ void loop() {
   
  if (results.value == 2553984193) //Tecla de arriba
   {
+    digitalWrite(led1, LOW);
+    digitalWrite(led2,HIGH);
+    
     digitalWrite(motorA1, HIGH);
     digitalWrite(motorB1,HIGH);
 
@@ -72,6 +87,10 @@ void loop() {
 
  if (results.value == 3138312673) //Tecla de arriba
   {
+    
+    digitalWrite(led1, LOW);
+    digitalWrite(led2,LOW);
+    
     digitalWrite(motorA1, LOW);
     digitalWrite(motorB1,LOW);
 
