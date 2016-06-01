@@ -6,8 +6,8 @@ int motorA = 12;
 int motorA1 = 11;
 int motorB = 10;
 int motorB1 = 9;
-int led1=13;
-int led2=8;
+int led1=8;
+int led2=7;
 
 
 IRrecv irrecv(RECV_PIN);
