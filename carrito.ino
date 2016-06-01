@@ -6,8 +6,8 @@ int motorA = 12;
 int motorA1 = 11;
 int motorB = 10;
 int motorB1 = 9;
-int led1=5;
-int led2=6;
+int led1=13;
+int led2=8;
 
 
 IRrecv irrecv(RECV_PIN);
@@ -35,8 +35,8 @@ void loop() {
     digitalWrite(led2,HIGH);
     
     
-    digitalWrite(motorA1, HIGH);
-    digitalWrite(motorB1,HIGH);
+    digitalWrite(motorA, HIGH);
+    digitalWrite(motorB,HIGH);
     
 
   } //HACIA ADELANTE
@@ -44,11 +44,11 @@ void loop() {
 
   if (results.value == 2173897225) //Tecla de arriba
   {
-    digitalWrite(motorA1, LOW);
-    digitalWrite(motorB1,LOW);
+    digitalWrite(motorA, LOW);
+    digitalWrite(motorB,LOW);
 
-    digitalWrite(motorA, HIGH);
-    digitalWrite(motorB,HIGH);
+    digitalWrite(motorA1, HIGH);
+    digitalWrite(motorB1,HIGH);
 
    
  }//HACIA ATRAS
@@ -59,11 +59,11 @@ void loop() {
     digitalWrite(led1, HIGH);
     digitalWrite(led2,LOW);
     
-    digitalWrite(motorA1,  HIGH);
-    digitalWrite(motorB1,HIGH);
+    digitalWrite(motorA1,  LOW);
+    digitalWrite(motorB1,LOW);
 
     digitalWrite(motorA, LOW);
-    digitalWrite(motorB,LOW);
+    digitalWrite(motorB,HIGH);
     
   }//hacia la derecha
 
@@ -74,10 +74,10 @@ void loop() {
     digitalWrite(led1, LOW);
     digitalWrite(led2,HIGH);
     
-    digitalWrite(motorA1, HIGH);
-    digitalWrite(motorB1,HIGH);
+    digitalWrite(motorA1, LOW);
+    digitalWrite(motorB1,LOW);
 
-    digitalWrite(motorA, LOW);
+    digitalWrite(motorA, HIGH);
     digitalWrite(motorB,LOW);
 
   }//hacia la izquierda
