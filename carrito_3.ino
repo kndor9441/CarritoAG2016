@@ -4,7 +4,7 @@ int led2 = 4;
 int motorA = 5 ;
 int motorA1  = 6 ;
 int motorB  = 9 ;
-int motorB1 = 10;
+int motorB1   = 10;
 
             
 int estado = '1';         
